@@ -322,6 +322,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="headerIcon.ico" />
+    <None Include="Resources\twitch.png" />
+    <None Include="Resources\uncommon ea sports fc visual identity %288%29.jpg" />
     <None Include="Resources\Fortnite_F_lettermark_logo.png" />
     <None Include="Resources\callofduty.png" />
     <None Include="Resources\wireless-32 %282%29.png" />

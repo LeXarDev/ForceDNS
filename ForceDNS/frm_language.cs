@@ -37,6 +37,8 @@ namespace ForceDNS
             {
                 {"1.1.1.1", (lbl_latency1, pictureLatency1)},
                 {"8.8.8.8", (lbl_latency2, pictureLatency2)},
+                {"9.9.9.9", (lbl_latency3, pictureLatency3)},
+                {"192.168.8.1", (lbl_latency4, pictureLatency4)},
                 // يمكنك إضافة المزيد من العناوين والعناصر هنا
             };
         }
@@ -134,6 +136,11 @@ namespace ForceDNS
         }
 
         private void frm_language_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }

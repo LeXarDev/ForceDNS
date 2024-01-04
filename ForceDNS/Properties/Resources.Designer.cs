@@ -653,9 +653,29 @@ namespace ForceDNS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap twitch {
+            get {
+                object obj = ResourceManager.GetObject("twitch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap twitter {
             get {
                 object obj = ResourceManager.GetObject("twitter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uncommon_ea_sports_fc_visual_identity__8_ {
+            get {
+                object obj = ResourceManager.GetObject("uncommon ea sports fc visual identity (8)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
