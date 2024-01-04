@@ -79,7 +79,7 @@ namespace ForceDNS
             {
                 if (internetConnection && _connected)
                 {
-                    lbl_status.Text = "فصل الاتــصــال";
+                    lbl_status.Text = "قطع الاتــصــال";
                     iconConnect.Image = Properties.Resources.turn_on;
                     iconConnect.ImageRotate = 180;
                     return;
