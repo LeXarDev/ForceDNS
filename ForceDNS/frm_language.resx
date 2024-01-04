@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bf_form.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 26</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureLatency1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAXtJREFUaEPtlkFKLEEQBfsautSlOCAeV/E+jroX9QAew6mZhonReGL1IimwA2Kj
+        0VnJ54M5raysDMTLzfm0vb6ftpuPvU+bh+n56nL+7eC05R83r7vFP09sP3u+PZurgTn8y58uf/Rurgbm
+        8N/Glm++z9XA+OJHh8eWpsNjS9PhsaXp8NjSdHhsaTo8tjQdHlualrLkprGlaRlLb5rv/XfLWHrTeH+0
+        jKU3jfdHy7DHacJaWoY9ThPW0jLscZqwlpZhj9OEtbQMe5wmrKVl2OM0YS0twx6nCWtpGfY4TVhLF1F5
+        01hLu6m+aayl3VTfNNbSbqpvGmtpNzaEJqylCWtpNzaEJqylCWtpNzaEJqylCWtpNzaEJqylCWtpNzaE
+        JqylCWtpNzaEJqylCWtpNzaEJqylCWtpNzaEJqylCWtpN7//IXubq59Ufxdph5sP27k7MxLV30Xa1ZmO
+        ue31xVz9pPq7X2lXZzvc2u2ztx14fxhW/d3Kyr9lmr4AyYe59FaWq+kAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pictureLatency2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAXtJREFUaEPtlkFKLEEQBfsautSlOCAeV/E+jroX9QAew6mZhonReGL1IimwA2Kj
@@ -145,18 +154,6 @@
         mmq4Hsnig+MEjmfxCnUbf+U4HjQdx2yRakNSc17FJurBJd4mBTGhqYZ/S9qnT8Ex1GrXgttBoSvXLbjP
         ZXGg4RP8gbdxjK9dEhcaP8PvmgK/rLZjunJt07RdG/DbewMDtPi0FRd6Xkz4pfJg6Ajq7y/+20lo8Wmv
         IK59DUuDwXXUvqH8/4zuCJXKX3EvztO9XYYEAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="pictureLatency2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAXtJREFUaEPtlkFKLEEQBfsautSlOCAeV/E+jroX9QAew6mZhonReGL1IimwA2Kj
-        0VnJ54M5raysDMTLzfm0vb6ftpuPvU+bh+n56nL+7eC05R83r7vFP09sP3u+PZurgTn8y58uf/Rurgbm
-        8N/Glm++z9XA+OJHh8eWpsNjS9PhsaXp8NjSdHhsaTo8tjQdHlualrLkprGlaRlLb5rv/XfLWHrTeH+0
-        jKU3jfdHy7DHacJaWoY9ThPW0jLscZqwlpZhj9OEtbQMe5wmrKVl2OM0YS0twx6nCWtpGfY4TVhLF1F5
-        01hLu6m+aayl3VTfNNbSbqpvGmtpNzaEJqylCWtpNzaEJqylCWtpNzaEJqylCWtpNzaEJqylCWtpNzaE
-        JqylCWtpNzaEJqylCWtpNzaEJqylCWtpNzaEJqylCWtpN7//IXubq59Ufxdph5sP27k7MxLV30Xa1ZmO
-        ue31xVz9pPq7X2lXZzvc2u2ztx14fxhW/d3Kyr9lmr4AyYe59FaWq+kAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="pingTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

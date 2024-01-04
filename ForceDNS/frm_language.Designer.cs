@@ -32,7 +32,6 @@ namespace ForceDNS
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_language));
-            this.bf_form = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.lbl_latency1 = new System.Windows.Forms.Label();
             this.pictureLatency1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,17 +54,6 @@ namespace ForceDNS
             this.pnl_latencySection.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bf_form
-            // 
-            this.bf_form.AnimateWindow = true;
-            this.bf_form.AnimationInterval = 250;
-            this.bf_form.BorderRadius = 15;
-            this.bf_form.ContainerControl = this;
-            this.bf_form.DockIndicatorTransparencyValue = 0.6D;
-            this.bf_form.ResizeForm = false;
-            this.bf_form.ShadowColor = System.Drawing.Color.WhiteSmoke;
-            this.bf_form.TransparentWhileDrag = true;
             // 
             // lbl_latency1
             // 
@@ -276,7 +264,7 @@ namespace ForceDNS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(52)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(884, 408);
+            this.ClientSize = new System.Drawing.Size(773, 408);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.pnl_latencySection);
             this.Controls.Add(this.label3);
@@ -309,8 +297,6 @@ namespace ForceDNS
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2BorderlessForm bf_form;
         private System.Windows.Forms.Label lbl_latency1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pictureLatency1;
         private Guna.UI2.WinForms.Guna2Button btn_refresh;
