@@ -59,6 +59,14 @@ namespace ForceDNS.Services
             _servicesUser.Add(new DnsAddress()
             {
                 UniqueID = Service.GenerateUniqueID(6),
+                dnsAddress = new string[] { "9.9.9.9", "149.112.112.112" },
+                Latency = 50,
+                Name = "Quad9",
+                Picture = Properties.Resources.Quad9
+            });
+            _servicesUser.Add(new DnsAddress()
+            {
+                UniqueID = Service.GenerateUniqueID(6),
                 dnsAddress = new string[] { "79.170.52.30", "0.0.0.0" },
                 Latency = 50,
                 Name = "Zain",

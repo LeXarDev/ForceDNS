@@ -483,6 +483,16 @@ namespace ForceDNS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Quad9 {
+            get {
+                object obj = ResourceManager.GetObject("Quad9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap radargame {
             get {
                 object obj = ResourceManager.GetObject("radargame", resourceCulture);
