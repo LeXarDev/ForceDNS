@@ -11,6 +11,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
+using System.Linq;
 using System.Windows.Forms;
 using Control = System.Windows.Forms.Control;
 
@@ -20,12 +22,13 @@ namespace ForceDNS
     {
         private bool dragging = false;
         private Point dragCursorPoint, dragFormPoint;
-
+        private PerformanceCounter downloadCounter;
+        private PerformanceCounter uploadCounter;
         public DnsAddress currentDNS, connectedDNS;
         private List<DnsAddress> servicesUser;
         private Guna2Button currentSelectedMenuOption;
         public Form currentFormLoaded;
-
+        private System.Windows.Forms.Timer Timer;
         private long _currentLatency = 0;
         public bool _connected;
         private bool pendingRequest, _internetConnection = true;
@@ -53,6 +56,47 @@ namespace ForceDNS
 
             // Just for test
             //currentDNS = servicesUser[0];
+            // احصل على فئة "Network Interface"
+            PerformanceCounterCategory networkCategory = new PerformanceCounterCategory("Network Interface");
+
+            // احصل على أسماء الشبكات المتاحة
+            string[] networkInterfaces = networkCategory.GetInstanceNames();
+
+            // اذا لم تكن هناك شبكة متاحة
+            if (networkInterfaces.Length == 0)
+            {
+                MessageBox.Show("لست متصل بـ شبكة");
+                return;
+            }
+
+            // اختر أول شبكة كافتراضي
+            string defaultNetworkInterface = networkInterfaces[0];
+
+            // اسم الشبكة لحساب إحصائيات الشبكة
+            string networkInterfaceName = defaultNetworkInterface;
+
+            // PerformanceCounter لقياس إحصائيات الشبكة
+            downloadCounter = new PerformanceCounter("Network Interface", "Bytes Received/sec", networkInterfaceName);
+            uploadCounter = new PerformanceCounter("Network Interface", "Bytes Sent/sec", networkInterfaceName);
+
+            // بدء تحديث Label بشكل دوري
+            Timer = new System.Windows.Forms.Timer();
+            Timer.Interval = 1000; // Update every second
+            Timer.Tick += Timer_Tick;
+            Timer.Start();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // القياسات
+            float downloadRateBytes = downloadCounter.NextValue();
+            float uploadRateBytes = uploadCounter.NextValue();
+
+            float downloadRateMB = downloadRateBytes / (1024 * 1024);
+            float uploadRateMB = uploadRateBytes / (1024 * 1024);
+
+            // تحديث Label بالقيم الجديدة
+            labelDownload.Text = $": {downloadRateMB:F2} MB/s";
+            labelUpload.Text = $": {uploadRateMB:F2} MB/s";
         }
 
         private void updateServices()
@@ -939,6 +983,7 @@ namespace ForceDNS
         {
             new frm_network().ShowDialog();
         }
+
 
         private void selectMenuOption(object sender, bool clickEvent)
         {
