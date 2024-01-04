@@ -41,13 +41,13 @@ namespace ForceDNS
             };
         }
 
-        private async void PingTimer_Tick(object sender, EventArgs e)
+        private void PingTimer_Tick(object sender, EventArgs e)
         {
-            // تنفيذ عملية الـ Ping
-            await PingHostAsync();
+            PingHostAsync();
         }
 
-        private async Task PingHostAsync()
+
+        private async void PingHostAsync()
         {
             var pingTasks = ipAddressControls.Select(pair => PingAndUpdateAsync(pair.Key, pair.Value.Item1, pair.Value.Item2)).ToList();
             await Task.WhenAll(pingTasks);
@@ -123,7 +123,8 @@ namespace ForceDNS
                 pictureLatency.Image = Properties.Resources.error;
             }
 
-            label.Text = $" {label.Tag} {pingValue} ms";
+            // تحديث نص الـ Label ليتضمن قيمة البنق باستخدام BeginInvoke
+            BeginInvoke(new Action(() => label.Text = $" {label.Tag} {pingValue} ms"));
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
