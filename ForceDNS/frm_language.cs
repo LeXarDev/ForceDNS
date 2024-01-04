@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,38 +49,33 @@ namespace ForceDNS
 
         private async Task PingHostAsync()
         {
-            foreach (var ipAddressControlPair in ipAddressControls)
+            var pingTasks = ipAddressControls.Select(pair => PingAndUpdateAsync(pair.Key, pair.Value.Item1, pair.Value.Item2)).ToList();
+            await Task.WhenAll(pingTasks);
+        }
+
+        private async Task PingAndUpdateAsync(string ipAddress, Label label, PictureBox pictureLatency)
+        {
+            using (Ping ping = new Ping())
             {
-                string ipAddress = ipAddressControlPair.Key;
-                var (label, pictureLatency) = ipAddressControlPair.Value;
-
-                using (Ping ping = new Ping())
+                try
                 {
-                    try
+                    PingReply reply = await ping.SendPingAsync(ipAddress);
+
+                    if (reply.Status == IPStatus.Success)
                     {
-                        PingReply reply = await Task.Run(() => ping.Send(ipAddress));
-
-                        if (reply.Status == IPStatus.Success)
-                        {
-                            // تحديث عنصر الواجهة الرسومية lbl_latency1 أو lbl_latency2 أو lbl_latency3 بناءً على العنوان IP
-                            UpdateLabel(ipAddress, reply.RoundtripTime, label);
-
-                            // تحديث عنصر الواجهة الرسومية الآخر كـ pictureLatency
-                            ReactToPing(reply.RoundtripTime, label, pictureLatency);
-                        }
-                        else
-                        {
-                            // في حالة عدم نجاح الـ Ping
-                            UpdateLabel(ipAddress, -1, label); // قم بتحديث مع قيمة سالبة للإشارة عن عدم نجاح الـ Ping
-                            pictureLatency.Image = null;
-                        }
+                        UpdateLabel(ipAddress, reply.RoundtripTime, label);
+                        ReactToPing(reply.RoundtripTime, label, pictureLatency);
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        // في حالة حدوث خطأ أثناء القياس
-                        UpdateLabel(ipAddress, -1, label); // قم بتحديث مع قيمة سالبة للإشارة عن وجود خطأ
+                        UpdateLabel(ipAddress, -1, label);
                         pictureLatency.Image = null;
                     }
+                }
+                catch (Exception ex)
+                {
+                    UpdateLabel(ipAddress, -1, label);
+                    pictureLatency.Image = null;
                 }
             }
         }
@@ -108,28 +104,25 @@ namespace ForceDNS
 
         private void ReactToPing(long pingValue, Label label, PictureBox pictureLatency)
         {
-            // تفاعل مع قيمة البنق هنا
-            Console.WriteLine(pingValue); // قم بطباعة قيمة pingValue للتحقق
+            Console.WriteLine(pingValue);
 
             if (pingValue >= 50 && pingValue < 100)
             {
-                pictureLatency.Image = Properties.Resources.signalGreen; // أخضر
+                pictureLatency.Image = Properties.Resources.signalGreen;
             }
             else if (pingValue >= 100 && pingValue < 150)
             {
-                pictureLatency.Image = Properties.Resources.signalYellow; // أصفر
+                pictureLatency.Image = Properties.Resources.signalYellow;
             }
             else if (pingValue >= 150)
             {
-                pictureLatency.Image = Properties.Resources.signalRed; // أحمر
+                pictureLatency.Image = Properties.Resources.signalRed;
             }
             else
             {
-                // أي قيمة أقل من 50، يمكنك تعيين صورة أخرى أو التعامل بطريقة أخرى
-                pictureLatency.Image = Properties.Resources.error; // صورة أخرى
+                pictureLatency.Image = Properties.Resources.error;
             }
 
-            // تحديث نص الـ Label ليتضمن قيمة البنق
             label.Text = $" {label.Tag} {pingValue} ms";
         }
 
