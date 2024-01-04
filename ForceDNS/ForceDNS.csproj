@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{365214D3-EBE3-4378-848E-E5FDBF2F847F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ForceDNS</RootNamespace>
+    <AssemblyName>ForceDNS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>ForceDNS</ProductName>
+    <PublisherName>LeXarDev</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>headerIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FB16388FBDC6324B3E476BC98A47980D5180FE0A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ForceDNS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscordRPC, Version=1.2.1.24, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiscordRichPresence.1.2.1.24\lib\net45\DiscordRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Latency.cs" />
+    <Compile Include="frm_language.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_language.Designer.cs">
+      <DependentUpon>frm_language.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_messageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_messageBox.Designer.cs">
+      <DependentUpon>frm_messageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_network.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_network.Designer.cs">
+      <DependentUpon>frm_network.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_networkAdapter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_networkAdapter.Designer.cs">
+      <DependentUpon>frm_networkAdapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NetworkInterfaceInfo.cs" />
+    <Compile Include="Launch\RegistryApplication.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DnsAddressItems.cs" />
+    <Compile Include="frm_about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_about.Designer.cs">
+      <DependentUpon>frm_about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_explore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_explore.Designer.cs">
+      <DependentUpon>frm_explore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_service.Designer.cs">
+      <DependentUpon>frm_service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_settings.Designer.cs">
+      <DependentUpon>frm_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Launch\LaunchProgram.cs" />
+    <Compile Include="Launch\LaunchUpdate.cs" />
+    <Compile Include="NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\NetworkInformation.cs" />
+    <Compile Include="Services\Service.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="User Controls\ServiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ServiceControl.Designer.cs">
+      <DependentUpon>ServiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DiscordRPCManager.cs" />
+    <Compile Include="Utility\FontManager.cs" />
+    <Compile Include="Utility\FormManager.cs" />
+    <Compile Include="frm_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_main.Designer.cs">
+      <DependentUpon>frm_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DnsAddress.cs" />
+    <Compile Include="Services\DnsManager.cs" />
+    <Compile Include="Utility\SpeedTest.cs" />
+    <EmbeddedResource Include="frm_about.resx">
+      <DependentUpon>frm_about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_explore.resx">
+      <DependentUpon>frm_explore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_language.resx">
+      <DependentUpon>frm_language.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_network.resx">
+      <DependentUpon>frm_network.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_networkAdapter.resx">
+      <DependentUpon>frm_networkAdapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_service.resx">
+      <DependentUpon>frm_service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_settings.resx">
+      <DependentUpon>frm_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_main.resx">
+      <DependentUpon>frm_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_messageBox.resx">
+      <DependentUpon>frm_messageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ServiceControl.resx">
+      <DependentUpon>ServiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Icons\letancyIcons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dnsIcons\electro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dnsIcons\shecan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\menuIcons\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\menuIcons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\menuIcons\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\menuIcons\explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\signal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dnsIcons\asiateach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dnsIcons\online403.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dnsIcons\radargame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dnsIcons\google.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dnsIcons\cloudflare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\exploreIcons\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\exploreIcons\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\headerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="headerIcon.ico" />
+    <None Include="Resources\Fortnite_F_lettermark_logo.png" />
+    <None Include="Resources\callofduty.png" />
+    <None Include="Resources\wireless-32 %282%29.png" />
+    <None Include="Resources\wireless-128.png" />
+    <None Include="Resources\wireless-32.png" />
+    <None Include="Resources\wireless-72.png" />
+    <None Include="Resources\wireless-64.png" />
+    <None Include="Resources\coffee.png" />
+    <None Include="Resources\pingg.png" />
+    <None Include="Resources\OpenDNS.png" />
+    <None Include="Resources\Mobily.png" />
+    <None Include="Resources\stc.png" />
+    <None Include="Resources\zain.png" />
+    <None Include="Resources\social.png" />
+    <None Include="Resources\instagram.png" />
+    <None Include="Resources\twitter.png" />
+    <None Include="Resources\network_51.png" />
+    <None Include="Resources\network_5.ico" />
+    <None Include="Resources\network_5.png" />
+    <None Include="Resources\75jKPJH1_400x400.png" />
+    <None Include="Icons\delete.png" />
+    <None Include="Icons\languagesIcon\germany.png" />
+    <None Include="Icons\languagesIcon\spain.png" />
+    <None Include="Icons\languagesIcon\iran.png" />
+    <None Include="Icons\languagesIcon\united-kingdom.png" />
+    <None Include="Icons\folder.png" />
+    <None Include="Icons\serviceAdd.png" />
+    <None Include="Icons\coffee.png" />
+    <None Include="Icons\setting.png" />
+    <None Include="Icons\no-wifi.png" />
+    <None Include="Icons\turn-on2.png" />
+    <None Include="Icons\turn-on.png" />
+    <None Include="Icons\mxqius.png" />
+    <None Include="Icons\messageBoxIcons\warningFlat.png" />
+    <None Include="Icons\messageBoxIcons\waningFlat.png" />
+    <None Include="Icons\messageBoxIcons\successFlat.png" />
+    <None Include="Icons\messageBoxIcons\infoFlat.png" />
+    <None Include="Icons\messageBoxIcons\errorFlat.png" />
+    <None Include="Icons\update.png" />
+    <None Include="Icons\network.png" />
+    <None Include="Icons\clean.png" />
+    <None Include="Icons\messageBoxIcons\warning.png" />
+    <None Include="Icons\messageBoxIcons\success.png" />
+    <None Include="Icons\messageBoxIcons\info.png" />
+    <None Include="Icons\messageBoxIcons\error.png" />
+    <None Include="Icons\dns.png" />
+    <None Include="Icons\exploreIcons\delete.png" />
+    <None Include="Icons\exploreIcons\services.png" />
+    <None Include="Icons\latencyIcons\signalYellow.png" />
+    <None Include="Icons\latencyIcons\signalRed.png" />
+    <None Include="Icons\latencyIcons\signalGreen.png" />
+    <None Include="Icons\SocialIcons\github48.png" />
+    <None Include="Icons\SocialIcons\instagram48.png" />
+    <None Include="Icons\SocialIcons\telegram48.png" />
+    <None Include="Icons\SocialIcons\github.png" />
+    <None Include="Icons\SocialIcons\instagram.png" />
+    <None Include="Icons\SocialIcons\telegram.png" />
+    <None Include="Resources\df68e403b0b6cfe5d0a2e79684b8888c.jpg" />
+    <None Include="Icons\menuIcons\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
