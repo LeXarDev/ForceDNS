@@ -38,6 +38,7 @@
             this.btn_explore = new Guna.UI2.WinForms.Guna2Button();
             this.btn_settings = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_control = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Shapes6 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Shapes4 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2Shapes5 = new Guna.UI2.WinForms.Guna2Shapes();
@@ -91,7 +92,6 @@
             this.tsm_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerLatency = new System.Windows.Forms.Timer(this.components);
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.guna2Shapes6 = new Guna.UI2.WinForms.Guna2Shapes();
             this.pnl_footer.SuspendLayout();
             this.pnl_control.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
@@ -293,6 +293,22 @@
             this.pnl_control.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_control_MouseMove);
             this.pnl_control.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_control_MouseUp);
             // 
+            // guna2Shapes6
+            // 
+            this.guna2Shapes6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Shapes6.BorderThickness = 0;
+            this.guna2Shapes6.FillColor = System.Drawing.Color.Silver;
+            this.guna2Shapes6.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.guna2Shapes6.LineThickness = 1;
+            this.guna2Shapes6.Location = new System.Drawing.Point(286, 10);
+            this.guna2Shapes6.Name = "guna2Shapes6";
+            this.guna2Shapes6.PolygonSkip = 1;
+            this.guna2Shapes6.Rotate = 0F;
+            this.guna2Shapes6.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.guna2Shapes6.Size = new System.Drawing.Size(13, 26);
+            this.guna2Shapes6.TabIndex = 49;
+            this.guna2Shapes6.Zoom = 100;
+            // 
             // guna2Panel5
             // 
             this.guna2Panel5.AutoRoundedCorners = true;
@@ -306,7 +322,7 @@
             this.guna2Panel5.Location = new System.Drawing.Point(300, 4);
             this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(328, 38);
+            this.guna2Panel5.Size = new System.Drawing.Size(208, 38);
             this.guna2Panel5.TabIndex = 47;
             // 
             // guna2Shapes4
@@ -315,7 +331,7 @@
             this.guna2Shapes4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Shapes4.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Shapes4.FillColor = System.Drawing.Color.White;
-            this.guna2Shapes4.Location = new System.Drawing.Point(118, 13);
+            this.guna2Shapes4.Location = new System.Drawing.Point(115, 14);
             this.guna2Shapes4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Shapes4.Name = "guna2Shapes4";
             this.guna2Shapes4.PolygonSides = 3;
@@ -331,7 +347,7 @@
             this.guna2Shapes5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Shapes5.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Shapes5.FillColor = System.Drawing.Color.White;
-            this.guna2Shapes5.Location = new System.Drawing.Point(13, 10);
+            this.guna2Shapes5.Location = new System.Drawing.Point(11, 10);
             this.guna2Shapes5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Shapes5.Name = "guna2Shapes5";
             this.guna2Shapes5.PolygonSides = 3;
@@ -347,7 +363,7 @@
             this.labelUpload.BackColor = System.Drawing.Color.Transparent;
             this.labelUpload.Font = new System.Drawing.Font("Cairo", 11F);
             this.labelUpload.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelUpload.Location = new System.Drawing.Point(133, 5);
+            this.labelUpload.Location = new System.Drawing.Point(129, 6);
             this.labelUpload.Name = "labelUpload";
             this.labelUpload.Size = new System.Drawing.Size(29, 29);
             this.labelUpload.TabIndex = 1;
@@ -359,7 +375,7 @@
             this.labelDownload.BackColor = System.Drawing.Color.Transparent;
             this.labelDownload.Font = new System.Drawing.Font("Cairo", 11F);
             this.labelDownload.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelDownload.Location = new System.Drawing.Point(27, 5);
+            this.labelDownload.Location = new System.Drawing.Point(26, 5);
             this.labelDownload.Name = "labelDownload";
             this.labelDownload.Size = new System.Drawing.Size(23, 29);
             this.labelDownload.TabIndex = 0;
@@ -1058,22 +1074,6 @@
             this.timerLatency.Interval = 5000;
             this.timerLatency.Tick += new System.EventHandler(this.timerLatency_Tick);
             // 
-            // guna2Shapes6
-            // 
-            this.guna2Shapes6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Shapes6.BorderThickness = 0;
-            this.guna2Shapes6.FillColor = System.Drawing.Color.Silver;
-            this.guna2Shapes6.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.guna2Shapes6.LineThickness = 1;
-            this.guna2Shapes6.Location = new System.Drawing.Point(286, 10);
-            this.guna2Shapes6.Name = "guna2Shapes6";
-            this.guna2Shapes6.PolygonSkip = 1;
-            this.guna2Shapes6.Rotate = 0F;
-            this.guna2Shapes6.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            this.guna2Shapes6.Size = new System.Drawing.Size(13, 26);
-            this.guna2Shapes6.TabIndex = 49;
-            this.guna2Shapes6.Zoom = 100;
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -1180,4 +1180,3 @@
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes6;
     }
 }
-
