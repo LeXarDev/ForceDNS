@@ -711,7 +711,7 @@ namespace ForceDNS
         }
         private void tsm_donateUs_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.coffeebede.com/mxqius");
+            Process.Start("#");
         }
 
         private async void btn_refresh_Click(object sender, EventArgs e)
